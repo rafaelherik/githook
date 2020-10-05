@@ -51,6 +51,7 @@ fi
 # navigate to the test project to run the tests
 # TODO: change this to your test project directory
 cd ..
+cd ..
 cd tests
 cd Hooks.Tests
 
@@ -63,7 +64,7 @@ dotnet test
 # $? is a shell variable which stores the return code from what we just ran
 rc=$?
 if [[ $rc != 0 ]] ; then
-    # A non-zero return code means an error occurred, so tell the user and exit
+    # A non-zero return code means an error occurred, so tell the user and exitclear
     echo -e "${RED}Unit tests failed, please fix and push again${NC}"
     echo ""
     exit $rc
