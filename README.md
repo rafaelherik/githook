@@ -1,5 +1,6 @@
 # Githook
 
+
 Repositório de exemplo para utilização do Git Hooks. 
 
 ### O que é o Git Hook? 
@@ -78,3 +79,30 @@ exit 0
 ```
 
 O arquivo deve ficar no diretório dos hooks com o nome "pre-push.sh". Após salvar o arquivo basta realizar uma alteração no código e executar um commit e push para o script ser executado.
+
+
+## Step by step
+
+### Estrutura do Projeto
+
+O projeto está estruturado com um projeto de WebAPI dentro de "src/Hookse" um UnitTest na pasta "tests/Hooks.Tests".
+
+![Estrutura de pastas](https://github.com/rafaelherik/githook/blob/main/docs/Captura%20de%20ecr%C3%A3%20de%202020-10-05%2013-34-30.png)
+
+
+Para testar o script criado, vou altearar o arquivo Startup.cs no projeto Web API para que o build não seja feito com sucesso e o hook bloqueie o push. Após a alteração feita vou executar os comandos, observe o resultado:
+
+![Commit erro no Startup.cs](https://github.com/rafaelherik/githook/blob/main/docs/Captura%20de%20ecr%C3%A3%20de%202020-10-05%2014-00-11.png)
+
+Com o commit realizado, vou tentar o push, o hook executa e faz o alerta:
+
+![Erro no Hook](https://github.com/rafaelherik/githook/blob/main/docs/Captura%20de%20ecr%C3%A3%20de%202020-10-05%2014-00-43.png)
+
+Com o erro do build o hook não completa o push, após corrigir o arquivo, vou adicioná-lo ao commit e tentar realizar o push normalmente:
+
+![Hook executado com sucesso](https://github.com/rafaelherik/githook/blob/main/docs/Captura%20de%20ecr%C3%A3%20de%202020-10-05%2013-59-02.png)
+
+A validação passou com sucesso e o push é realizado logo após a validação.
+
+
+
