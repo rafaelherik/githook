@@ -33,7 +33,8 @@ echo -e "${YELLOW}Trying to build tests project...${NC}"
 #Let's speed things up a little bit
 DOTNET_CLI_TELEMETRY_OPTOUT=1
 DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
-    
+
+cd src
 cd Hooks
     
 # build the project
