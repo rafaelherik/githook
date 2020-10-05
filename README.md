@@ -34,8 +34,8 @@ echo -e "${YELLOW}Trying to build tests project...${NC}"
 DOTNET_CLI_TELEMETRY_OPTOUT=1
 DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
 
-cd src
-cd Hooks
+cd src/Hooks
+
     
 # build the project
 dotnet build
